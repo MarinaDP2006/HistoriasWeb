@@ -73,9 +73,6 @@ src/
 
 ## Imágenes y portadas
 src/assets/covers/
-Cada historia tiene un campo cover que apunta a la ruta relativa de la imagen. En el componente BookCardComponent se muestran: título, tipo (Fanfic / Original), fandom (si aplica), descripción corta, botón "Leer en Wattpad" y la portada (imagen).
 
-## Scripts típicos (Angular CLI)
-npm install        # Instalar dependencias
-npm start          # ng serve
-npm run build      # ng build
+Cada historia tiene un campo cover que apunta a la ruta relativa de la imagen. 
+En el componente BookCardComponent se muestran: título, tipo (Fanfic / Original), fandom (si aplica), descripción corta, botón "Leer en Wattpad" y la portada (imagen).
