@@ -1,6 +1,4 @@
 # 📚 HistoriasWeb  
-### Biblioteca personal de fanfics y novelas originales
-
 HistoriasWeb es una aplicación web desarrollada en **Angular**, creada como un portal personal donde los lectores pueden:
 
 - Consultar mis **fanfics** y **novelas originales**  
@@ -10,22 +8,17 @@ HistoriasWeb es una aplicación web desarrollada en **Angular**, creada como un 
 - Iniciar sesión para acceder a contenido protegido  
 - Conocer más sobre mí y contactar conmigo  
 
-Mi perfil de Wattpad:  
-👉 **https://www.wattpad.com/user/Ninai_06**
+Mi perfil de Wattpad: **https://www.wattpad.com/user/Ninai_06**
 
----
 
 ## 🚀 Tecnologías utilizadas
-
-- Angular 17+
+- Angular
 - TypeScript
-- SCSS
+- CSS
 - HTML5
 - RxJS
 - Angular Router
 - LocalStorage (para login simulado)
-
----
 
 ## 📁 Estructura del proyecto
 
@@ -72,20 +65,3 @@ src/
     ├── environment.ts
     └── environment.prod.ts
 ```
-
-## Generar
-Generar carpeta src/app completa  
-(components, pages, services, models, guards, pipes, directives, interceptors)
-Generar carpeta src/app/components completa  
-(layout + shared + ui si quieres añadirla)
-Generar carpeta src/app/pages completa  
-(home, login, search, about, contact, fanfic, original, editions)
-Generar carpeta src/app/services completa
-Generar carpeta src/app/models completa
-Generar carpeta src/app/guards completa
-Generar carpeta src/app/interceptors completa
-Generar carpeta src/app/pipes completa
-Generar carpeta src/app/directives completa
-Generar carpeta src/environments completa
-Generar carpeta assets con portadas y estructura
-Generar README final completo para GitHub
