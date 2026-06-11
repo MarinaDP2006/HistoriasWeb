@@ -1,0 +1,18 @@
+<nav class="navbar">
+  <div class="navbar__brand" (click)="navigate('')">
+    <span class="navbar__logo">📚</span>
+    <span class="navbar__title">HistoriasWeb</span>
+  </div>
+
+  <div class="navbar__links">
+    <button class="navbar__link" (click)="navigate('')">Inicio</button>
+    <button class="navbar__link" (click)="navigate('fanfic')">Fanfic</button>
+    <button class="navbar__link" (click)="navigate('original')">Original</button>
+    <button class="navbar__link" (click)="navigate('ediciones')">Ediciones</button>
+    <button class="navbar__link" (click)="navigate('buscar')">Buscar</button>
+    <button class="navbar__link" (click)="navigate('sobre-mi')">Sobre mí</button>
+    <button class="navbar__link" (click)="navigate('contacto')">Contacto</button>
+  </div>
+
+  <button class="navbar__login" (click)="navigate('login')">Iniciar sesión</button>
+</nav>
