@@ -1,37 +1,39 @@
-# 📚 HistoriasWeb  
-HistoriasWeb es una aplicación web desarrollada en **Angular**, creada como un portal personal donde los lectores pueden:
+# 📚 HistoriasWeb – Biblioteca de fanfics y originales
+Web para consultar e informar sobre mis libros fanfic y originales. Incluye enlaces a Wattpad, fichas de historias y portadas como imágenes. Este proyecto es una **SPA hecha con Angular** pensada como un "hub" de lectura donde los usuarios pueden:
 
-- Consultar mis **fanfics** y **novelas originales**  
-- Acceder a las historias directamente en **Wattpad**  
-- Ver portadas, descripciones, etiquetas y fandoms  
-- Buscar historias por título, fandom o tags  
-- Iniciar sesión para acceder a contenido protegido  
-- Conocer más sobre mí y contactar conmigo  
+- **Iniciar sesión**: Acceso para lectores registrados que quieran leer las historias.
+- **Buscar**: Buscador de historias por título o fandom.
+- **Sobre mí**: Información de la autora.
+- **Contacto**: Formulario básico de contacto.
+- **Fanfic**: Listado filtrado solo de fanfics.
+- **Original**: Listado filtrado solo de historias originales.
+- **Ediciones**: Sección para mostrar versiones/actualizaciones y reediciones.
 
-Mi perfil de Wattpad: **https://www.wattpad.com/user/Ninai_06**
+Las **portadas** se gestionan como imágenes dentro de `assets/covers/` y se referencian desde el modelo de historia. Los **enlaces de lectura** apuntan a Wattpad (perfil: `https://www.wattpad.com/user/Ninai_06`) y se configuran en el servicio de datos.
 
-
-## 🚀 Tecnologías utilizadas
-- Angular
-- TypeScript
-- CSS
-- HTML5
-- RxJS
-- Angular Router
-- LocalStorage (para login simulado)
-
-## 📁 Estructura del proyecto
-
+## Estructura del proyecto
 ```text
 src/
 ├── app/
 │   ├── components/
 │   │   ├── layout/
-│   │   │   ├── navbar/
-│   │   │   └── footer/
+│   │   │   ├── footer/
+│   │   │   │   ├── footer.component.ts
+│   │   │   │   ├── footer.component.html
+│   │   │   │   └── footer.component.scss
+│   │   │   └── navbar/
+│   │   │       ├── navbar.component.ts
+│   │   │       ├── navbar.component.html
+│   │   │       └── navbar.component.scss
 │   │   └── shared/
 │   │       ├── book-card/
+│   │       │   ├── book-card.component.ts
+│   │       │   ├── book-card.component.html
+│   │       │   └── book-card.component.scss
 │   │       └── search-bar/
+│   │           ├── search-bar.component.ts
+│   │           ├── search-bar.component.html
+│   │           └── search-bar.component.scss
 │   ├── pages/
 │   │   ├── home/
 │   │   ├── login/
@@ -41,6 +43,7 @@ src/
 │   │   ├── fanfic/
 │   │   ├── original/
 │   │   └── editions/
+│   │       └── *.component.{ts,html,scss}
 │   ├── services/
 │   │   ├── stories.service.ts
 │   │   └── auth.service.ts
@@ -65,3 +68,12 @@ src/
     ├── environment.ts
     └── environment.prod.ts
 ```
+
+# Imágenes y portadas
+src/assets/covers/
+Cada historia tiene un campo cover que apunta a la ruta relativa de la imagen. En el componente BookCardComponent se muestran: título, tipo (Fanfic / Original), fandom (si aplica), descripción corta, botón "Leer en Wattpad" y la portada (imagen).
+
+# Scripts típicos (Angular CLI)
+npm install        # Instalar dependencias
+npm start          # ng serve
+npm run build      # ng build
