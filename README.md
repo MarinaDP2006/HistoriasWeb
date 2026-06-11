@@ -1,3 +1,5 @@
+# PARA CONTINUAR: https://chat.deepseek.com/a/chat/s/d80b2d0d-7d52-44ef-a38c-a8540726f98a
+
 # HistoriasWeb – Biblioteca de fanfics y originales
 Web para consultar e informar sobre mis libros fanfic y originales. Incluye enlaces a Wattpad, fichas de historias y portadas como imágenes. Este proyecto es una **SPA hecha con Angular** pensada como un "hub" de lectura donde los usuarios pueden:
 
