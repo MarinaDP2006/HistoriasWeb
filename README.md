@@ -1,4 +1,4 @@
-# 📚 HistoriasWeb – Biblioteca de fanfics y originales
+# HistoriasWeb – Biblioteca de fanfics y originales
 Web para consultar e informar sobre mis libros fanfic y originales. Incluye enlaces a Wattpad, fichas de historias y portadas como imágenes. Este proyecto es una **SPA hecha con Angular** pensada como un "hub" de lectura donde los usuarios pueden:
 
 - **Iniciar sesión**: Acceso para lectores registrados que quieran leer las historias.
@@ -69,11 +69,11 @@ src/
     └── environment.prod.ts
 ```
 
-# Imágenes y portadas
+## Imágenes y portadas
 src/assets/covers/
 Cada historia tiene un campo cover que apunta a la ruta relativa de la imagen. En el componente BookCardComponent se muestran: título, tipo (Fanfic / Original), fandom (si aplica), descripción corta, botón "Leer en Wattpad" y la portada (imagen).
 
-# Scripts típicos (Angular CLI)
+## Scripts típicos (Angular CLI)
 npm install        # Instalar dependencias
 npm start          # ng serve
 npm run build      # ng build
