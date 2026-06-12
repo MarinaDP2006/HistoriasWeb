@@ -13,7 +13,7 @@ export class StoriesService {
       type: 'fanfic',
       fandom: 'El Señor de los Anillos',
       tags: ['éomer', 'legolas', 'rohan', 'romance', 'guerra', 'secreto'],
-      description: 'Lira, la hermana menor de Legolas, viaja a Rohan como parte de la misión de la Comunidad. Lo que nunca imaginó es que allí conocería a Éomer, el jinete más leal del reino y el hombre destinado a convertirse en su mayor peligro... y su mayor refugio. Entre batallas y decisiones difíciles, descubren que no importa la distancia ni el riesgo. Versión en inglés.',
+      description: 'Lira, Legolas younger sister, travels to Rohan as part of the Fellowships mission. Little did she know that there she would meet Éomer, the kingdoms most loyal rider and the man destined to become both her greatest threat and her greatest refuge. From the very first moment, Éomer tries to ignore his feelings. But war cannot stop the inevitable. English version',
       wattpadUrl: 'https://www.wattpad.com/story/412380769-legendary-secret-lovers-%C3%A9omer',
       cover: 'assets/covers/legendary-secret-lovers.jpg',
       status: 'ongoing',
