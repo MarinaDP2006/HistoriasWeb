@@ -46,30 +46,6 @@ export class StoriesService {
       language: 'spanish'
     },
     {
-      id: 'desde-el-otro-lado-del-escenario-joe-keery',
-      title: 'Desde el otro lado del escenario | Joe Keery',
-      type: 'fanfic',
-      fandom: 'Stranger Things / Joe Keery',
-      tags: ['joe keery', 'stranger things', 'steve harrington', 'romance', 'famosos'],
-      description: 'Historia sobre una conexión especial que trasciende la pantalla. Cuando el destino cruza caminos entre una fan y el actor que interpreta a Steve Harrington, nada vuelve a ser igual.',
-      wattpadUrl: 'https://www.wattpad.com/story/405931777-desde-el-otro-lado-del-escenario-joe-keery',
-      cover: 'assets/covers/desde-el-otro-lado.jpg',
-      status: 'complete',
-      language: 'spanish'
-    },
-    {
-      id: 'infinite-game-natki',
-      title: 'Infinite Game | Natki',
-      type: 'fanfic',
-      fandom: 'Original / Gaming',
-      tags: ['gamers', 'torneos', 'competencia', 'romance', 'juventud'],
-      description: 'En el mundo de los esports y las partidas infinitas, dos jugadores descubren que el amor también es una partida donde a veces se gana y otras se aprende. Una historia sobre rivalidad, amistad y sentimientos que van más allá de la pantalla.',
-      wattpadUrl: 'https://www.wattpad.com/story/400262254-infinite-game-natki',
-      cover: 'assets/covers/infinite-game.jpg',
-      status: 'complete',
-      language: 'spanish'
-    },
-    {
       id: 'el-gorrion-y-la-mujer-del-mar-jack-sparrow',
       title: 'El gorrión y la mujer del mar | Jack Sparrow',
       type: 'fanfic',
