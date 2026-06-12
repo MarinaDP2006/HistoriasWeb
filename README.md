@@ -62,10 +62,7 @@ src/
 │       └── external-link.directive.ts
 ├── assets/
 │   └── covers/
-│       ├── fanfic-1.jpg
-│       ├── fanfic-2.jpg
-│       ├── original-1.jpg
-│       └── ...
+│       
 └── environments/
     ├── environment.ts
     └── environment.prod.ts
