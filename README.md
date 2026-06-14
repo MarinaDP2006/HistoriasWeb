@@ -1,11 +1,8 @@
-# HistoriasWeb 
-Es una biblioteca personal de fanfics y novelas originales creada como una SPA con **Angular 20 (Standalone Components)**. La web sirve como centro de lectura para mostrar historias, portadas, información de la autora y enlaces a Wattpad.
-
-Perfil Wattpad de la autora:  
-https://www.wattpad.com/user/Ninai_06
+# HistoriasWeb
+Perfil: https://www.wattpad.com/user/Ninai_06
 
 ## Descripción
-HistoriasWeb es una aplicación pensada para mostrar una colección de historias (fanfic y originales) con portadas grandes, tarjetas visuales, descripciones y enlaces externos (Wattpad). La experiencia es **mobile-first**, responsive y con una estética inspirada en bibliotecas y fantasía.
+Es una aplicación pensada para mostrar una colección de historias (fanfic y originales) con portadas grandes, tarjetas visuales, descripciones y enlaces externos (Wattpad). La experiencia es **mobile-first**, responsive y con una estética inspirada en bibliotecas y fantasía.
 
 ## Tecnologías
 - **Angular 20** (Standalone Components, sin NgModules)  
