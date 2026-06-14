@@ -33,6 +33,8 @@ src/
 │   ├── fanfic/
 │   ├── original/
 │   └── editions/
+│   └── story-details/
+│   └── register/
 │
 ├── services/
 │   ├── stories.service.ts
@@ -58,6 +60,26 @@ src/
 ├── app.config.ts
 ├── app.ts
 └── app.scss
+app.config.ts
+app.html
+app.route.ts
+app.scss
+app.ts
+assets/covers/
+index.html
+main.ts
+styles.scss
+.editorconfig
+.gitignore
+.hintrc
+.prettierrc
+angular.json
+package-lock.json
+package.json
+README.md
+tsconfig.app.json
+tsconfig.json
+tsconfig.spec.json
 ```
 Assets de portadas: `src/assets/covers/`.
 
