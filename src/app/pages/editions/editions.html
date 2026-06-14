@@ -1,0 +1,105 @@
+<main class="editions-page">
+  <header class="editions-hero">
+    <h1 class="title">Ediciones</h1>
+    <p class="subtitle">Historial de actualizaciones de portadas y contenido de las historias.</p>
+  </header>
+
+  <section class="controls">
+    <label class="select">
+      <span class="label">Filtrar por historia</span>
+      <select (change)="selectStory($any($event.target).value ? Number($any($event.target).value) : null)">
+        <option value="">Todas</option>
+        <option *ngFor="let s of stories()" [value]="s.id">{{ s.title }}</option>
+      </select>
+    </label>
+
+    <div class="auth-note" *ngIf="!auth()?.isAuthenticated">
+      <small>Inicia sesión para crear o gestionar ediciones.</small>
+    </div>
+  </section>
+
+  <section class="create-section" *ngIf="auth()?.isAuthenticated">
+    <form [formGroup]="form" (ngSubmit)="addEdition()" class="create-card" novalidate>
+      <h2 class="card-title">Crear nueva edición</h2>
+
+      <label class="field">
+        <span class="field-label">Historia</span>
+        <select formControlName="storyId">
+          <option [ngValue]="null">Selecciona una historia</option>
+          <option *ngFor="let s of stories()" [ngValue]="s.id">{{ s.title }}</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span class="field-label">Tipo de edición</span>
+        <select formControlName="type">
+          <option value="cover">Portada</option>
+          <option value="content">Contenido</option>
+          <option value="both">Portada y contenido</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span class="field-label">Notas de la edición</span>
+        <textarea formControlName="notes" rows="4" placeholder="Describe los cambios realizados..."></textarea>
+      </label>
+
+      <label class="field">
+        <span class="field-label">Portada (opcional)</span>
+        <input type="file" accept="image/*" (change)="onCoverSelected($event)" />
+        <div class="preview" *ngIf="previewCover()">
+          <img [src]="previewCover()" alt="Vista previa de la portada" />
+          <small class="muted">Vista previa de la imagen seleccionada</small>
+        </div>
+      </label>
+
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">Guardar edición</button>
+        <button class="btn btn-ghost" type="button" (click)="form.reset({ type: 'cover', storyId: null, notes: '', cover: null }); previewCover.set(null)">Limpiar</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="list-section">
+    <h2 class="section-title">Historial de ediciones</h2>
+
+    <div *ngIf="isLoading()" class="loading">Cargando ediciones…</div>
+
+    <div *ngIf="!isLoading() && visibleEditions.length === 0" class="empty">
+      No hay ediciones registradas todavía.
+    </div>
+
+    <div class="editions-list" *ngIf="!isLoading() && visibleEditions.length > 0">
+      <ng-container *ngFor="let e of visibleEditions">
+        <article class="edition-card" aria-labelledby="edition-{{ e.id }}">
+          <header class="edition-header">
+            <h3 id="edition-{{ e.id }}" class="edition-title">
+              {{ storyById(e.storyId)?.title || 'Historia desconocida' }}
+            </h3>
+            <div class="edition-meta">
+              <time [attr.datetime]="e.date">{{ e.date | date: 'medium' }}</time>
+              <span class="badge">{{ e.type }}</span>
+            </div>
+          </header>
+
+          <div class="edition-body">
+            <div class="edition-left">
+              <div class="edition-notes">
+                <p>{{ e.notes }}</p>
+              </div>
+
+              <div class="edition-actions">
+                <button class="btn btn-danger" type="button" (click)="removeEdition(e.id)">Eliminar</button>
+              </div>
+            </div>
+
+            <div class="edition-right" *ngIf="e.coverPreview">
+              <img [src]="e.coverPreview" alt="Portada edición" />
+              <small class="muted">{{ e.coverFileName }}</small>
+            </div>
+          </div>
+        </article>
+      </ng-container>
+    </div>
+  </section>
+</main>

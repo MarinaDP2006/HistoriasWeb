@@ -1,0 +1,27 @@
+<main class="search-page">
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="title">Buscar historias</h1>
+      <p class="subtitle">Busca por título, fandom o descripción.</p>
+    </div>
+  </header>
+  <section class="search-section">
+    <app-search-bar (search)="onSearch($event)"></app-search-bar>
+  </section>
+  <section class="results-section">
+    <div *ngIf="isLoading()" class="loading">Cargando historias…</div>
+    <div *ngIf="!isLoading()">
+      <p class="summary" *ngIf="query().trim()">
+        Resultados para "<strong>{{ query() }}</strong>": {{ results().length }}
+      </p>
+      <div *ngIf="results().length === 0" class="empty">
+        No se encontraron historias.
+      </div>
+      <div class="grid" *ngIf="results().length > 0">
+        <ng-container *ngFor="let s of results()">
+          <app-book-card [story]="s"></app-book-card>
+        </ng-container>
+      </div>
+    </div>
+  </section>
+</main>

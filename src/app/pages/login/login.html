@@ -1,0 +1,62 @@
+<section class="login-page">
+  <div class="login-container">
+    <header class="login-header">
+      <h1 class="login-title">Iniciar sesión</h1>
+      <p class="login-subtitle">Accede a tu biblioteca personal de historias</p>
+    </header>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-card" novalidate>
+      <!-- Error global -->
+      <div *ngIf="authError()" class="alert alert-error" role="alert" aria-live="polite">
+        {{ authError() }}
+      </div>
+      <!-- Email -->
+      <label class="field">
+        <span class="field-label">Correo electrónico</span>
+        <input
+          type="email"
+          formControlName="email"
+          class="input"
+          placeholder="tucorreo@ejemplo.com"
+          [attr.aria-invalid]="email.invalid && (email.touched || email.dirty)"
+          aria-describedby="emailHelp"/>
+        <small id="emailHelp" class="field-help" *ngIf="email.touched && email.invalid">
+          <span *ngIf="email.errors?.['required']">El correo es obligatorio.</span>
+          <span *ngIf="email.errors?.['email']">Introduce un correo válido.</span>
+        </small>
+      </label>
+      <!-- Password -->
+      <label class="field">
+        <span class="field-label">Contraseña</span>
+        <input
+          type="password"
+          formControlName="password"
+          class="input"
+          placeholder="••••••••"
+          [attr.aria-invalid]="password.invalid && (password.touched || password.dirty)"
+          aria-describedby="passwordHelp"/>
+        <small id="passwordHelp" class="field-help" *ngIf="password.touched && password.invalid">
+          <span *ngIf="password.errors?.['required']">La contraseña es obligatoria.</span>
+          <span *ngIf="password.errors?.['minlength']">Mínimo 6 caracteres.</span>
+        </small>
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" formControlName="remember" />
+        <span>Recordarme</span>
+      </label>
+      <div class="actions">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="isLoading()"
+          aria-busy="{{ isLoading() }}">
+          <span *ngIf="!isLoading()">Entrar</span>
+          <span *ngIf="isLoading()">Iniciando sesión…</span>
+        </button>
+        <a class="link-muted" routerLink="/">Volver al inicio</a>
+      </div>
+    </form>
+    <footer class="login-footer">
+      <p class="muted">¿Problemas para iniciar sesión? <a routerLink="/contact">Contáctame</a></p>
+    </footer>
+  </div>
+</section>

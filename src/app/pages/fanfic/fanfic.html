@@ -1,0 +1,25 @@
+<main class="fanfic-page">
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="title">Fanfics</h1>
+      <p class="subtitle">Colección de fanfics disponibles para lectura.</p>
+    </div>
+  </header>
+  <section class="search-section">
+    <app-search-bar (search)="onSearch($event)"></app-search-bar>
+  </section>
+  <section class="content">
+    <div *ngIf="isLoading()" class="loading">Cargando fanfics…</div>
+    <div *ngIf="!isLoading() && filtered().length === 0" class="empty">
+      No se encontraron fanfics que coincidan con tu búsqueda.
+      <div class="actions">
+        <a routerLink="/" class="btn btn-ghost">Volver al inicio</a>
+      </div>
+    </div>
+    <div class="grid" *ngIf="!isLoading() && filtered().length > 0">
+      <ng-container *ngFor="let s of filtered()">
+        <app-book-card [story]="s"></app-book-card>
+      </ng-container>
+    </div>
+  </section>
+</main>

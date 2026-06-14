@@ -1,0 +1,51 @@
+<main class="about-page">
+  <header class="about-hero">
+    <div class="hero-inner">
+      <h1 class="title">Sobre mí</h1>
+      <p class="subtitle">Soy Marina (Ninai_06) — escritora y lectora. Aquí comparto mis fanfics y novelas originales.</p>
+    </div>
+  </header>
+  <section class="author-section">
+    <div class="author-card">
+      <img class="author-avatar" src="/assets/covers/entre-paginas-e-historias.jpg"
+        alt="Portada representativa de la autora" width="220" height="320"/>
+      <div class="author-content">
+        <h2 class="author-name">Marina — Ninai_06</h2>
+        <p class="author-bio">
+          Soy autora de fanfics y novelas originales. Me encanta explorar mundos de fantasía, romance y drama.
+          En este sitio encontrarás mis historias, portadas y enlaces directos a Wattpad.
+        </p>
+        <div class="author-actions">
+          <a
+            class="btn btn-primary"
+            href="https://www.wattpad.com/user/Ninai_06"
+            appExternalLink
+            >Visitar Wattpad</a>
+          <a class="btn btn-outline" routerLink="/contact">Contactar</a>
+        </div>
+        <p class="author-note">
+          También puedes explorar las historias destacadas más abajo. Todas las portadas están optimizadas para lectura.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="stories-section" aria-labelledby="stories-heading">
+    <h3 id="stories-heading" class="section-title">Historias destacadas</h3>
+    <div *ngIf="isLoading()" class="loading">Cargando historias…</div>
+    <div *ngIf="!isLoading() && stories().length === 0" class="empty">
+      No hay historias disponibles por el momento.
+    </div>
+    <div class="cards-grid" *ngIf="!isLoading() && stories().length > 0">
+      <ng-container *ngFor="let s of stories()">
+        <!-- Si BookCardComponent está disponible, lo usamos; si no, se puede reemplazar por markup propio -->
+        <app-book-card [story]="s"></app-book-card>
+      </ng-container>
+    </div>
+  </section>
+  <footer class="about-footer">
+    <p class="muted">
+      ¿Quieres más? Encuéntrame en Wattpad:
+      <a href="https://www.wattpad.com/user/Ninai_06" appExternalLink>Ninai_06</a>
+    </p>
+  </footer>
+</main>

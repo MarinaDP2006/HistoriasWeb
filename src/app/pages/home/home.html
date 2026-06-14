@@ -1,0 +1,41 @@
+<main class="home-page">
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="title">HistoriasWeb</h1>
+      <div class="cta">
+        <app-search-bar (search)="onSearch($event)"></app-search-bar>
+      </div>
+    </div>
+  </header>
+  <section class="featured-section" aria-labelledby="featured-heading">
+    <h2 id="featured-heading" class="section-title">Destacados</h2>
+    <div *ngIf="isLoading()" class="loading">Cargando historias…</div>
+    <div class="featured-grid" *ngIf="!isLoading() && featured().length > 0">
+      <ng-container *ngFor="let s of featured()">
+        <app-book-card [story]="s"></app-book-card>
+      </ng-container>
+    </div>
+    <div *ngIf="!isLoading() && featured().length === 0" class="empty">
+      No hay historias destacadas por el momento.
+    </div>
+    <div class="links">
+      <a routerLink="/fanfic" class="btn btn-primary">Ver fanfics</a>
+      <a routerLink="/original" class="btn btn-outline">Ver originales</a>
+    </div>
+  </section>
+  <section class="explore-section">
+    <h3 class="section-title">Explorar por tipo</h3>
+    <div class="type-grid">
+      <div class="type-card">
+        <h4>Fanfics</h4>
+        <p class="muted">Historias basadas en universos existentes.</p>
+        <a routerLink="/fanfic" class="link">Explorar fanfics →</a>
+      </div>
+      <div class="type-card">
+        <h4>Originales</h4>
+        <p class="muted">Novelas y relatos originales.</p>
+        <a routerLink="/original" class="link">Explorar originales →</a>
+      </div>
+    </div>
+  </section>
+</main>

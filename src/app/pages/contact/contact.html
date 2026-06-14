@@ -1,0 +1,93 @@
+<main class="contact-page">
+  <section class="contact-hero">
+    <div class="hero-inner">
+      <h1 class="title">Contacto</h1>
+      <p class="subtitle">¿Tienes dudas, sugerencias o quieres colaborar? Escríbeme.</p>
+    </div>
+  </section>
+  <section class="contact-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="contact-card" novalidate>
+      <!-- Feedback -->
+      <div *ngIf="successMessage()" class="alert alert-success" role="status" aria-live="polite">
+        {{ successMessage() }}
+      </div>
+      <div *ngIf="errorMessage()" class="alert alert-error" role="alert" aria-live="polite">
+        {{ errorMessage() }}
+      </div>
+      <!-- Nombre -->
+      <label class="field">
+        <span class="field-label">Nombre</span>
+        <input type="text" formControlName="name" class="input" placeholder="Tu nombre" [attr.aria-invalid]="name.invalid && (name.touched || name.dirty)"aria-describedby="nameHelp"/>
+        <small id="nameHelp" class="field-help" *ngIf="name.touched && name.invalid">
+          <span *ngIf="name.errors?.['required']">El nombre es obligatorio.</span>
+          <span *ngIf="name.errors?.['minlength']">Mínimo 2 caracteres.</span>
+        </small>
+      </label>
+      <!-- Email -->
+      <label class="field">
+        <span class="field-label">Correo electrónico</span>
+        <input
+          type="email"
+          formControlName="email"
+          class="input"
+          placeholder="tucorreo@ejemplo.com"
+          [attr.aria-invalid]="email.invalid && (email.touched || email.dirty)"
+          aria-describedby="emailHelp"
+        />
+        <small id="emailHelp" class="field-help" *ngIf="email.touched && email.invalid">
+          <span *ngIf="email.errors?.['required']">El correo es obligatorio.</span>
+          <span *ngIf="email.errors?.['email']">Introduce un correo válido.</span>
+        </small>
+      </label>
+      <!-- Subject -->
+      <label class="field">
+        <span class="field-label">Asunto (opcional)</span>
+        <input
+          type="text"
+          formControlName="subject"
+          class="input"
+          placeholder="Sobre qué quieres escribir"
+          aria-describedby="subjectHelp"
+        />
+        <small id="subjectHelp" class="field-help">Puedes dejarlo vacío si prefieres.</small>
+      </label>
+      <!-- Message -->
+      <label class="field">
+        <span class="field-label">Mensaje</span>
+        <textarea
+          formControlName="message"
+          class="textarea"
+          rows="6"
+          placeholder="Escribe tu mensaje aquí..."
+          [attr.aria-invalid]="message.invalid && (message.touched || message.dirty)"
+          aria-describedby="messageHelp"
+        ></textarea>
+        <small id="messageHelp" class="field-help" *ngIf="message.touched && message.invalid">
+          <span *ngIf="message.errors?.['required']">El mensaje es obligatorio.</span>
+          <span *ngIf="message.errors?.['minlength']">Mínimo 10 caracteres.</span>
+        </small>
+      </label>
+      <!-- Actions -->
+      <div class="actions">
+        <button type="submit" class="btn btn-primary" [disabled]="isLoading()" aria-busy="{{ isLoading() }}">
+          <span *ngIf="!isLoading()">Enviar mensaje</span>
+          <span *ngIf="isLoading()">Enviando…</span>
+        </button>
+        <div class="secondary-links">
+          <a routerLink="/" class="link-muted">Volver al inicio</a>
+          <a class="link-muted" href="https://www.wattpad.com/user/Ninai_06" target="_blank" rel="noopener noreferrer">Wattpad</a>
+        </div>
+      </div>
+    </form>
+    <aside class="contact-info">
+      <div class="info-card">
+        <h3>Alternativas</h3>
+        <p class="muted">Si prefieres, puedes contactarme a través de Wattpad o dejar un comentario en la historia correspondiente.</p>
+        <ul>
+          <li><strong>Wattpad:</strong> <a href="https://www.wattpad.com/user/Ninai_06" target="_blank" rel="noopener noreferrer">Ninai_06</a></li>
+        </ul>
+      </div>
+    </aside>
+  </section>
+</main>
+
