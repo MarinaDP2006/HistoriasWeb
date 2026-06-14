@@ -1,1 +1,61 @@
+<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary-color: #2e1a3b;
+  --secondary-color: #c9a03d;
+  --background: #0f0e17;
+  --surface: #1a1a2c;
+  --text: #f0f0f0;
+  --text-light: #b0b0c0;
+  --border: #2a2a3c;
+  --shadow: 0 8px 20px rgba(0,0,0,0.3);
+  --radius: 16px;
+  --font-fantasy: 'Cinzel', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--background);
+  background-image: radial-gradient(circle at 10% 20%, rgba(60, 40, 80, 0.2) 0%, rgba(15, 14, 23, 0.9) 90%);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, .navbar .logo a, .book-card h3 {
+  font-family: var(--font-fantasy);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  transition: color 0.2s;
+  &:hover {
+    color: #e6b84e;
+  }
+}
+
+.main-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  min-height: calc(100vh - 160px);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+}
+=======
 /* You can add global styles to this file, and also import other style files */
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4

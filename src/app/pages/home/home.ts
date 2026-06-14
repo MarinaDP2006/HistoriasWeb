@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+import { Component, inject, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { StoriesService } from '../../services/stories.services';
+import { BookCardComponent } from '../../components/shared/book-card/book-card';
+=======
 import { Component, OnInit, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -5,15 +11,27 @@ import type { Story } from '../../models/story.model';
 import { StoriesService } from '../../services/stories.services';
 import { BookCard } from '../../components/shared/book-card/book-card';
 import { SearchBar } from '../../components/shared/search-bar/search-bar';
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4
 
 @Component({
   selector: 'app-home',
   standalone: true,
+<<<<<<< HEAD
+  imports: [CommonModule, BookCardComponent],
+=======
   imports: [CommonModule, RouterModule, BookCard, SearchBar],
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4
   templateUrl: './home.html',
   styleUrls: ['./home.scss']
 })
 export class HomePage implements OnInit {
+<<<<<<< HEAD
+  private storiesService = inject(StoriesService);
+  recentStories = this.storiesService.getRecentStories();
+  popularStories = this.storiesService.getPopularStories();
+
+  ngOnInit() {}
+=======
   readonly isLoading = signal<boolean>(true);
   readonly stories = signal<Story[]>([]);
   readonly query = signal<string>('');
@@ -74,4 +92,5 @@ export class HomePage implements OnInit {
   onSearch(term: string): void {
     this.query.set(term);
   }
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4
 }

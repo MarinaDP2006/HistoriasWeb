@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { StoriesService } from '../../services/stories.services';
+import { BookCardComponent } from '../../components/shared/book-card/book-card';
+import { AuthService } from '../../services/auth.service';
+import { Story } from '../../models/story.model';
+=======
 import { AuthServices } from './../../services/auth.services';
 import { Component, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -17,10 +25,31 @@ interface Edition {
   coverFileName?: string;
   coverPreview?: string; // data URL for preview
 }
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4
 
 @Component({
   selector: 'app-editions',
   standalone: true,
+<<<<<<< HEAD
+  imports: [CommonModule, BookCardComponent],
+  templateUrl: './editions.html',
+  styleUrls: ['./editions.scss']
+})
+export class EditionsComponent implements OnInit {
+  private storiesService = inject(StoriesService);
+  private auth = inject(AuthService);
+
+  eomerStories = signal<Story[]>([]);
+
+  ngOnInit() {
+    if (this.auth.isAuthenticated()) {
+      // Filtrar las dos historias de Éomer por sus IDs
+      const all = this.storiesService.getStories();
+  const eomer = all.filter(s => s.id === '10' || s.id === '11');
+      this.eomerStories.set(eomer);
+    }
+  }
+=======
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './editions.html',
   styleUrls: ['./editions.scss']
@@ -213,4 +242,5 @@ function cryptoRandomId(): string {
   } catch {
     return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
   }
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4
 }

@@ -1,0 +1,36 @@
+<div class="story-detail-container">
+  @if (loading()) {
+    <div class="loading">Cargando...</div>
+  } @else if (error() || !story()) {
+    <div class="not-found">
+      <h2>Historia no encontrada</h2>
+      <a routerLink="/">Volver al inicio</a>
+    </div>
+  } @else {
+    <article class="story-article">
+      <!-- Eliminada la imagen de portada -->
+      <div class="story-header">
+        <div class="header-info">
+          <h1>{{ story()!.title }}</h1>
+          <p class="author">por {{ story()!.author }}</p>
+          <div class="stats">
+            <span>👁️ {{ story()!.reads | number }}</span>
+            <span>📖 {{ story()!.chapters }} capítulos</span>
+            @if (story()!.fandom) {
+              <span>🏷️ {{ story()!.fandom }}</span>
+            }
+          </div>
+          <a [href]="getWattpadUrl()" target="_blank" rel="noopener noreferrer" class="wattpad-link">
+            Leer en Wattpad →
+          </a>
+        </div>
+      </div>
+      <div class="story-content">
+        <h2>Sinopsis</h2>
+        <p>{{ story()!.description }}</p>
+        <h2>Acceso</h2>
+        <p>Los capítulos están disponibles en Wattpad. Haz clic en el enlace superior para leer la historia completa.</p>
+      </div>
+    </article>
+  }
+</div>

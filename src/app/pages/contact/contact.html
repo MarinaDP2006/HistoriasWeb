@@ -1,3 +1,53 @@
+<<<<<<< HEAD
+<div class="contact-page">
+  <h1>Contacto</h1>
+  <p>¿Tienes alguna duda, sugerencia o simplemente quieres saludarnos? Completa el formulario y te responderemos lo antes posible.</p>
+  @if (success) {
+    <div class="alert success">¡Mensaje enviado correctamente! Te contactaremos pronto.</div>
+  }
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+    <div class="form-group">
+      <label for="name">Nombre completo *</label>
+      <input type="text" id="name" formControlName="name" placeholder="Tu nombre">
+      @if (submitted && contactForm.get('name')?.invalid) {
+        <span class="error">El nombre es obligatorio.</span>
+      }
+    </div>
+    <div class="form-group">
+      <label for="email">Correo electrónico *</label>
+      <input type="email" id="email" formControlName="email" placeholder="tu@email.com">
+      @if (submitted && contactForm.get('email')?.invalid) {
+        @if (contactForm.get('email')?.errors?.['required']) {
+          <span class="error">El correo es obligatorio.</span>
+        }
+        @if (contactForm.get('email')?.errors?.['email']) {
+          <span class="error">Introduce un correo válido.</span>
+        }
+      }
+    </div>
+    <div class="form-group">
+      <label for="subject">Asunto *</label>
+      <input type="text" id="subject" formControlName="subject" placeholder="¿De qué quieres hablar?">
+      @if (submitted && contactForm.get('subject')?.invalid) {
+        <span class="error">El asunto es obligatorio.</span>
+      }
+    </div>
+    <div class="form-group">
+      <label for="message">Mensaje *</label>
+      <textarea id="message" formControlName="message" rows="5" placeholder="Escribe tu mensaje aquí..."></textarea>
+      @if (submitted && contactForm.get('message')?.invalid) {
+        <span class="error">El mensaje no puede estar vacío.</span>
+      }
+    </div>
+    <button type="submit" [disabled]="submitted && contactForm.invalid">Enviar mensaje</button>
+  </form>
+  <div class="contact-info">
+    <h3>O escríbenos directamente:</h3>
+    <p>📧 <strong>EMAIL:</strong> <a href="mailto:hola@historiasweb.com">historiesofnina05@gmail.com</a></p>
+    <p>📘 <strong>INSTAGRAM:</strong> <a href="#" appExternalLink>swattpad_stories_Ninai</a></p>
+  </div>
+</div>
+=======
 <main class="contact-page">
   <section class="contact-hero">
     <div class="hero-inner">
@@ -91,3 +141,4 @@
   </section>
 </main>
 
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4

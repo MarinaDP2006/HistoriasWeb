@@ -1,0 +1,93 @@
+.story-detail-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.loading, .not-found {
+  text-align: center;
+  padding: 3rem;
+}
+
+.story-article {
+  background: var(--surface, #fff);
+  border-radius: var(--radius, 12px);
+  box-shadow: var(--shadow, 0 2px 8px rgba(0,0,0,0.08));
+  overflow: hidden;
+}
+
+.story-header {
+  .header-info {
+    width: 100%;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .header-info {
+    flex: 1;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color, #5c2a91);
+    }
+    .author {
+      font-size: 1.1rem;
+      color: var(--text-light, #6b6b6b);
+      margin-bottom: 1rem;
+    }
+    .stats {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      span {
+        background: #f0f0f0;
+        padding: 0.2rem 0.8rem;
+        border-radius: 30px;
+        font-size: 0.9rem;
+      }
+    }
+    .fandom {
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .wattpad-link {
+      display: inline-block;
+      background: #ff7a3c;
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s;
+      &:hover {
+        background: #e5631e;
+      }
+    }
+  }
+}
+
+.story-content {
+  padding: 2rem;
+  h2 {
+    margin: 1.5rem 0 0.5rem;
+    font-size: 1.5rem;
+  }
+  p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .story-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .cover-img {
+      width: 160px;
+    }
+    .stats {
+      justify-content: center;
+    }
+  }
+}

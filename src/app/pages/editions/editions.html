@@ -1,3 +1,89 @@
+<<<<<<< HEAD
+<div class="updates-page">
+
+  <!-- Cabecera elegante -->
+  <header class="page-header">
+    <h1>Actualizaciones</h1>
+    <p class="subtitle">Seguimiento de las obras activas y novedades de la comunidad</p>
+  </header>
+
+  @if (eomerStories().length > 0) {
+    <!-- Sección de historias destacadas -->
+    <section class="featured-stories">
+      <h2>Últimas entregas del universo de Rohan</h2>
+      <div class="stories-grid">
+        @for (story of eomerStories(); track story.id) {
+          <app-book-card [story]="story"></app-book-card>
+        }
+      </div>
+    </section>
+
+    <!-- Próximos capítulos (calendario) -->
+    <section class="schedule">
+      <h2>Calendario de publicaciones</h2>
+      <div class="schedule-list">
+        <div class="schedule-item">
+          <span class="date">15 de junio de 2026 - 15:45 CEST</span>
+          <span class="title">La revelación</span>
+          <span class="status">Programado</span>
+        </div>
+        <div class="schedule-item">
+          <span class="date">18 de junio de 2026 - 05:30 CEST</span>
+          <span class="title">Alianza fortalecida</span>
+          <span class="status">Programado</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estadísticas agregadas de ambas historias -->
+    <section class="statistics">
+      <h2>Impacto en la comunidad</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-value">{{ totalLikes() }}</span>
+          <span class="stat-label">Reacciones totales</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">{{ totalReads() }}</span>
+          <span class="stat-label">Lecturas acumuladas</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">{{ totalChapters() }}</span>
+          <span class="stat-label">Capítulos publicados</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cita de la obra (sin emojis) -->
+    <section class="quote">
+      <blockquote>
+        “El valor no consiste en no tener miedo, sino en vencerlo. Lira y Éomer lo demostraron en cada batalla.”
+      </blockquote>
+      <cite>— Fragmento de Legendary Lovers</cite>
+    </section>
+
+    <!-- Versión en inglés destacada -->
+    <section class="english-notice">
+      <h2>English version</h2>
+      <p>For readers who prefer the original language, the complete story is also available in English.</p>
+      <a [routerLink]="['/story', '11']" class="btn-secondary">Access English edition</a>
+    </section>
+
+    <!-- Comunidad (WhatsApp, sin emojis) -->
+    <section class="community">
+      <h2>Comunidad de lectores</h2>
+      <p>Próximamente se habilitará un espacio de encuentro para comentar teorías y compartir creaciones.</p>
+      <button class="btn-outline" disabled>En desarrollo</button>
+    </section>
+
+  } @else {
+    <div class="auth-warning">
+      <p>Acceso restringido. Inicie sesión para ver las actualizaciones.</p>
+      <a routerLink="/login" class="btn-primary">Iniciar sesión</a>
+    </div>
+  }
+</div>
+=======
 <main class="editions-page">
   <header class="editions-hero">
     <h1 class="title">Ediciones</h1>
@@ -103,3 +189,4 @@
     </div>
   </section>
 </main>
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4

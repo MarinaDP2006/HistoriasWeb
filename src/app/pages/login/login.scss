@@ -1,3 +1,70 @@
+<<<<<<< HEAD
+.login-container {
+  max-width: 400px;
+  margin: 3rem auto;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+  }
+  .form-group {
+    margin-bottom: 1rem;
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 500;
+    }
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      &:focus {
+        outline: none;
+        border-color: var(--primary-color);
+      }
+    }
+    .checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      input {
+        width: auto;
+      }
+    }
+  }
+  button {
+    width: 100%;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.75rem;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.2s;
+    &:hover:not(:disabled) {
+    background: darken(#5c2a91, 8%);
+    }
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+  .error {
+    color: #d32f2f;
+    background: #ffebee;
+    padding: 0.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+  }
+}
+=======
 :root {
   --bg: #f7f5f2;
   --card: #ffffff;
@@ -180,3 +247,4 @@
     font-size: 1.75rem;
   }
 }
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4

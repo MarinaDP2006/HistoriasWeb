@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+<div class="search-page">
+  <h1>Búsqueda de historias</h1>
+  <app-search-bar (search)="onSearch($event)"></app-search-bar>
+
+  <div class="search-results">
+    @if (searchTerm && results().length === 0) {
+      <p class="no-results">No se encontraron resultados para "{{ searchTerm }}".</p>
+    }
+    @if (results().length > 0) {
+      <p class="result-count">{{ results().length }} resultado(s) encontrado(s)</p>
+      <div class="stories-grid">
+        @for (story of results(); track story.id) {
+          <app-book-card [story]="story"></app-book-card>
+        }
+      </div>
+    }
+  </div>
+</div>
+=======
 <main class="search-page">
   <header class="hero">
     <div class="hero-inner">
@@ -25,3 +45,4 @@
     </div>
   </section>
 </main>
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4

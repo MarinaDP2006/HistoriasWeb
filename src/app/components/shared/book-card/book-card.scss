@@ -1,0 +1,59 @@
+.book-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(201, 160, 61, 0.2);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    border-color: var(--secondary-color);
+  }
+
+  .book-cover {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    background: #2a2a3c;
+  }
+
+  .book-info {
+    padding: 1rem;
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+      color: var(--secondary-color);
+    }
+    .author {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+    }
+    .description {
+      font-size: 0.85rem;
+      color: #ccc;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    .meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-bottom: 0.75rem;
+    }
+    .read-more {
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
+      color: var(--secondary-color);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,1 +1,27 @@
+<<<<<<< HEAD
+<nav class="navbar">
+  <div class="logo">
+    <a routerLink="/">HistoriasWeb</a>
+  </div>
+  <div class="nav-links">
+    <a routerLink="/fanfic" routerLinkActive="active">Fanfics</a>
+    <a routerLink="/original" routerLinkActive="active">Originales</a>
+    <a routerLink="/editions" routerLinkActive="active">Actualizaciones</a>
+    <a routerLink="/about" routerLinkActive="active">Acerca de</a>
+    <a routerLink="/contact" routerLinkActive="active">Contacto</a>
+  </div>
+  <div class="nav-actions">
+    <app-search-bar (search)="onSearch($event)"></app-search-bar>
+    @if (isAuthenticated()) {
+      <div class="user-menu">
+        <span>{{ currentUser()?.name || currentUser()?.email }}</span>
+        <button (click)="logout()" class="logout-btn">Salir</button>
+      </div>
+    } @else {
+      <a routerLink="/login" class="login-btn">Iniciar sesión</a>
+    }
+  </div>
+</nav>
+=======
 <p>navbar works!</p>
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4

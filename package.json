@@ -18,7 +18,12 @@
     "@angular/platform-browser": "^21.2.0",
     "@angular/router": "^21.2.0",
     "rxjs": "~7.8.0",
+<<<<<<< HEAD
+    "tslib": "^2.3.0",
+    "zone.js": "^0.16.2"
+=======
     "tslib": "^2.3.0"
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4
   },
   "devDependencies": {
     "@angular/build": "^21.2.15",
@@ -29,4 +34,8 @@
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4

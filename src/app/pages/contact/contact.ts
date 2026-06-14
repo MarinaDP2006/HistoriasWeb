@@ -1,11 +1,44 @@
+<<<<<<< HEAD
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+=======
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4
 
 @Component({
   selector: 'app-contact',
   standalone: true,
+<<<<<<< HEAD
+  imports: [CommonModule, ReactiveFormsModule],
+  templateUrl: './contact.html',
+  styleUrls: ['./contact.scss']
+})
+export class ContactPage {
+  private fb = inject(FormBuilder);
+
+  contactForm = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    subject: ['', Validators.required],
+    message: ['', Validators.required]
+  });
+
+  submitted = false;
+  success = false;
+
+  onSubmit() {
+    this.submitted = true;
+    if (this.contactForm.invalid) return;
+    console.log('Formulario enviado:', this.contactForm.value);
+    this.success = true;
+    this.contactForm.reset();
+    this.submitted = false;
+    setTimeout(() => this.success = false, 5000);
+=======
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
@@ -96,5 +129,6 @@ export class ContactComponent {
       // ignore
     }
     return null;
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4
   }
 }

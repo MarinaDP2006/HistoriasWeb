@@ -1,0 +1,36 @@
+<div class="search-page">
+  <h1>Buscador de historias</h1>
+  <app-search-bar [searchTerm]="searchTerm" (search)="onSearch($event)"></app-search-bar>
+
+  <!-- Filtro por fandom -->
+  <div class="fandom-filters">
+    <span>Filtrar por universo:</span>
+    @for (f of fandoms; track f.key) {
+      <button
+        class="fandom-btn"
+        [style.background]="selectedFandom === f.key ? f.color : 'transparent'"
+        [style.borderColor]="f.color"
+        [style.color]="selectedFandom === f.key ? 'white' : f.color"
+        (click)="selectFandom(f.key)">
+        {{ f.name }}
+      </button>
+    }
+  </div>
+
+  <div class="search-results">
+    @if (searchTerm || selectedFandom) {
+      @if (results().length === 0) {
+        <p class="no-results">No se encontraron resultados.</p>
+      } @else {
+        <p class="result-count">{{ results().length }} historia(s) encontrada(s)</p>
+        <div class="stories-grid">
+          @for (story of results(); track story.id) {
+            <app-book-card [story]="story"></app-book-card>
+          }
+        </div>
+      }
+    } @else {
+      <p class="hint">Escribe un término o selecciona un fandom para comenzar la búsqueda.</p>
+    }
+  </div>
+</div>

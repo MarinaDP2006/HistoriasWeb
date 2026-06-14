@@ -1,3 +1,55 @@
+<<<<<<< HEAD
+<div class="home-container">
+  <!-- Banner de estadísticas -->
+  <div class="stats-banner">
+    <div class="stat-item">
+      <span class="stat-number">{{ totalStories }}</span>
+      <span class="stat-label">Historias</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">{{ totalReads | number }}</span>
+      <span class="stat-label">Lecturas</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">{{ totalChapters }}</span>
+      <span class="stat-label">Capítulos</span>
+    </div>
+  </div>
+
+  <!-- Últimas historias -->
+  <section class="stories-section">
+    <h2>Últimas historias</h2>
+    <div class="stories-grid">
+      @for (story of recentStories; track story.id) {
+        <app-book-card [story]="story"></app-book-card>
+      }
+    </div>
+  </section>
+
+  <!-- Más populares -->
+  <section class="stories-section">
+    <h2>Más populares</h2>
+    <div class="stories-grid">
+      @for (story of popularStories; track story.id) {
+        <app-book-card [story]="story"></app-book-card>
+      }
+    </div>
+  </section>
+
+  <!-- Redes sociales -->
+  <div class="social-section">
+    <h2>Síguenos en redes</h2>
+    <div class="social-links">
+      <a href="https://www.instagram.com/tucuenta" target="_blank" rel="noopener noreferrer" class="social-link instagram"> <!-- Rellenar con mis datos-->
+        Instagram
+      </a>
+      <a href="https://www.tiktok.com/@tucuenta" target="_blank" rel="noopener noreferrer" class="social-link tiktok">  <!-- Rellenar con mis datos-->
+        TikTok
+      </a>
+    </div>
+  </div>
+</div>
+=======
 <main class="home-page">
   <header class="hero">
     <div class="hero-inner">
@@ -39,3 +91,4 @@
     </div>
   </section>
 </main>
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4

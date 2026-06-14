@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { StoriesService } from '../../services/stories.services';
+import { BookCardComponent } from '../../components/shared/book-card/book-card';
+import { SearchBarComponent } from '../../components/shared/search-bar/search-bar';
+import { Story } from '../../models/story.model';
+=======
 import { Component, OnInit, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -5,15 +13,43 @@ import type { Story } from '../../models/story.model';
 import { StoriesService } from '../../services/stories.services';
 import { BookCard } from '../../components/shared/book-card/book-card.ts';
 import { SearchBar } from '../../components/shared/search-bar/search-bar.ts';
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4
 
 @Component({
   selector: 'app-fanfic',
   standalone: true,
+<<<<<<< HEAD
+  imports: [CommonModule, BookCardComponent, SearchBarComponent],
+=======
   imports: [CommonModule, RouterModule, BookCard, SearchBar],
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4
   templateUrl: './fanfic.html',
   styleUrls: ['./fanfic.scss']
 })
 export class FanficPage implements OnInit {
+<<<<<<< HEAD
+  private storiesService = inject(StoriesService);
+  allStories = signal<Story[]>([]);
+  filteredStories = signal<Story[]>([]);
+
+  ngOnInit() {
+    this.allStories.set(this.storiesService.getStoriesByCategory('fanfic'));
+    this.filteredStories.set(this.allStories());
+  }
+
+  onSearch(term: string) {
+    const q = term.toLowerCase();
+    if (!q) {
+      this.filteredStories.set(this.allStories());
+      return;
+    }
+    const filtered = this.allStories().filter(s =>
+      s.title.toLowerCase().includes(q) ||
+      s.author.toLowerCase().includes(q) ||
+      (s.fandom && s.fandom.toLowerCase().includes(q))
+    );
+    this.filteredStories.set(filtered);
+=======
   readonly isLoading = signal<boolean>(true);
   readonly stories = signal<Story[]>([]);
   readonly query = signal<string>('');
@@ -81,5 +117,6 @@ export class FanficPage implements OnInit {
 
   onSearch(term: string): void {
     this.query.set(term);
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4
   }
 }

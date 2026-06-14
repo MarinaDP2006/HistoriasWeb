@@ -1,3 +1,25 @@
+<<<<<<< HEAD
+.original-page {
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  app-search-bar {
+    margin-bottom: 2rem;
+    display: block;
+  }
+  .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .no-results {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-light);
+  }
+}
+=======
 :root {
   --bg: #fbf8f6;
   --muted: #6b6b6b;
@@ -83,3 +105,4 @@
   border: 1px solid rgba(16, 16, 16, 0.06);
   color: #333;
 }
+>>>>>>> 948c241bd2a2fb300a5656d5025e1ae7974454d4
